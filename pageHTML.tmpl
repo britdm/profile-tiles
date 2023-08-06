@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+<style>
+pre {
+  display: inline-block;
+  white-space: pre-wrap; 
+  max-width: 375px; 
+  height: 425px; 
+  border-radius: 25px; 
+  border: 1px solid #C0C0C0;
+  padding: 20px;
+  overflow: auto;
+  width: 33%;
+}
+table, th, td {
+  border: 0px solid black;
+  width: 100%;
+  font-size: 15px;
+  padding-top: 0;
+}
+img {
+  width: 183px;
+  height: 165px;
+  padding: 0;
+  border-radius: 50%;
+}
+</style>
+</head>
+
+<body>
+{{ range . }}
+<pre>
+
+<table style="margin-top:0px;">
+    <tr>
+        <td style="width: 50%"><img src={{ .Image }}></td>
+        <td style="width: 50%;text-align: center;">{{ .Name }}</td>
+    </tr>
+</table>
+<table style="margin-bottom:0px;margin-top:0px;">
+    <tr>
+        <td style="text-align: center;"><iconify-icon icon="mdi:location" style="color: gray;" width="15" height="15"></iconify-icon> {{ .Location }}</td>
+    </tr>
+</table>
+<table style="margin-bottom:0px;">
+    <tr>
+        <td style="width: 33%">{{ .Description }}</td>
+        <td style="width: 33%;text-align: center;">Linktree<br><br><a href={{ .Links }}><iconify-icon icon="simple-icons:linktree" style="color: limegreen;" width="50" height="50"></iconify-icon></a></td>
+        <td style="width: 33%;text-align: center;">Resume<br><br><a href={{ .Resume }} download><iconify-icon icon="mdi:file-download" style="color: black;" width="50" height="50"></iconify-icon></a></td>
+    </tr>
+</table>
+</pre>
+{{ end }}
+
+</body>
+
+</html>
