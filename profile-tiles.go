@@ -16,23 +16,32 @@ type Tile struct {
 }
 
 func main() {
-	profileTile := []Tile{
+	// Modify the data in profileTiles before generating the profile tile(s)
+	profileTiles := []Tile{
 		{
 			Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultricies tempus elit.",
-			Image:       "./image.png",
+			Image:       "./resources/image.png",
 			Links:       "https://linktr.ee/",
 			Location:    "Austin, TX, US",
 			Name:        "FName\nL/SName",
-			Resume:      "./resume.pdf",
+			Resume:      "./resources/resume.pdf",
 		},
-		{
-			Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultricies tempus elit.",
-			Image:       "./image.png",
-			Links:       "https://linktr.ee/",
-			Location:    "Austin, TX, US",
-			Name:        "FName\nL/SName",
-			Resume:      "./resume.pdf",
-		},
+		// {
+		// 	Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultricies tempus elit.",
+		// 	Image:       "./resources/image.png",
+		// 	Links:       "https://linktr.ee/",
+		// 	Location:    "Austin, TX, US",
+		// 	Name:        "FName\nL/SName",
+		// 	Resume:      "./resources/resume.pdf",
+		// },
+		// {
+		// 	Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultricies tempus elit.",
+		// 	Image:       "./resources/image.png",
+		// 	Links:       "https://linktr.ee/",
+		// 	Location:    "Austin, TX, US",
+		// 	Name:        "FName\nL/SName",
+		// 	Resume:      "./resources/resume.pdf",
+		// },
 	}
 
 	var profileTmpl = "pageHTML.tmpl"
@@ -47,13 +56,13 @@ func main() {
 	// 	panic(err)
 	// }
 
-	var profileTileHTML = "./profileTile.html"
-	writer, err := os.Create(profileTileHTML)
+	var profileTilesHTML = "./profileTile.html"
+	writer, err := os.Create(profileTilesHTML)
 	if err != nil {
 		fmt.Println("Could not create file: ", err)
 	}
 	defer writer.Close()
-	err = tmpl.Execute(writer, profileTile)
+	err = tmpl.Execute(writer, profileTiles)
 	if err != nil {
 		fmt.Println("Could write content to file: ", err)
 	}
