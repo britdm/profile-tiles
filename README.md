@@ -13,3 +13,11 @@ The project can be modified to use any template file format to generate HTML usi
 ### Profile Suggestions
 
 Description for each profile can look like [this](https://sg.indeed.com/career-advice/interviewing/describe-yourself-in-one-sentence). Long descriptions will enable a scroll bar on the tile.
+
+## How to use
+
+Populate the `profileTiles` data with all of the profiles defined `Tiles`. Uncomment the additional tiles to see how spacing will look with multiple tiles.
+
+Replace the dummy files `./resources/image.png` and `./resources/resume.pdf` before generating the HTML.
+
+Run the script `go run profile-tiles.go`. This should generate an HTML file, which can be used as a single page, integrated into a larger HTML file. To preview in VSCode using HTML Preview use `CTRL+SHIFT+V`.
