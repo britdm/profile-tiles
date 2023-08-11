@@ -16,8 +16,12 @@ Description for each profile can look like [this](https://sg.indeed.com/career-a
 
 ## How to use
 
-Populate the `profileTiles` data with all of the profiles defined `Tiles`. Uncomment the additional tiles to see how spacing will look with multiple tiles.
+Populate the `profileTiles` defined in the `profile-tiles.go` file with profile data, the returned variable will be a list of `Tiles`. Uncomment the additional tiles to see how spacing will look with multiple rows of tiles.
 
-Replace the dummy files `./resources/image.png` and `./resources/resume.pdf` before generating the HTML.
+For a single profile, replace the dummy files `./resources/image.png` and `./resources/resume.pdf`, then update the data in `profile-tiles.go` before generating the HTML.
 
-Run the script `go run profile-tiles.go`. This should generate an HTML file, which can be used as a single page, integrated into a larger HTML file. To preview in VSCode using HTML Preview use `CTRL+SHIFT+V`.
+Run the script `go run main.go pprofile-tiles.go`. This should generate an HTML file, which can be used as a single page or integrated into a larger HTML file. To preview in VSCode using the HTML Preview plugin use `CTRL+SHIFT+V`.
+
+### Build
+
+Generate the executable `go build .`
