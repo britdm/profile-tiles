@@ -19,6 +19,11 @@ jobs:
         run: |
           go build .
           ./profile-tiles
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with: 
+          name: index.html
+          path: index.html
   deploy:
     needs: build
     permissions:
