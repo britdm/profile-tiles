@@ -3,6 +3,9 @@
 <head>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <style>
+    body {
+      background-color:rgba(170, 199, 166, 0.823);
+    }
     pre {
       display: inline-block;
       white-space: pre-wrap; 
@@ -10,6 +13,7 @@
       height: 425px; 
       border-radius: 25px; 
       border: 1px solid #C0C0C0;
+      background-color: white;
       padding: 20px;
       overflow: auto;
       width: 33%;
@@ -34,6 +38,28 @@
   </style>
 </head>
 <body>
+  <h1 style="text-align: center;">Profile Tiles Demo</h1><br/>
+  <div style="text-align: center;">
+      <span>These "tiles" and page were generated using the tools and templates in the <a href="https://github.com/britdm/profile-tiles">repository</a>. To generate a static page with this template, modify the HTML in the <a href="https://github.com/britdm/profile-tiles/blob/main/pageHTML.tmpl">pageHTML.tmpl</a> file before running the tool.</span>
+  </div>
+  <div style="padding: 20px;">
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mollis et justo ut viverra.
+          Cras vehicula feugiat tortor, et ultrices est eleifend et. Duis vel dapibus leo. 
+          Praesent ut imperdiet metus, quis dignissim massa. 
+          Vestibulum pellentesque turpis a ligula tincidunt, eget efficitur quam pellentesque. 
+          Cras imperdiet dignissim massa, vitae dignissim sapien egestas ut. Nam hendrerit eleifend tellus ut fringilla. 
+          Nunc at vehicula enim. In euismod urna ex, venenatis finibus lorem hendrerit eget. 
+          Integer eget nulla quis mauris iaculis laoreet quis quis eros. Aenean mattis dolor libero, vulputate posuere justo vehicula sed. 
+          Donec magna ex, congue at suscipit vitae, pulvinar in nulla. Ut a purus nisl. Maecenas eu quam massa. 
+          Proin tempor ut magna non suscipit.<br><br>
+
+          Vestibulum dapibus turpis vitae fermentum cursus. Vestibulum dignissim tellus nibh, consequat maximus lorem posuere sed. 
+          Ut imperdiet massa et nulla posuere, et iaculis orci tempor. Praesent ac gravida mi. 
+          Nulla auctor aliquet nisl, id fermentum orci dapibus non. Vestibulum rhoncus risus justo, ultrices finibus nisi viverra elementum. 
+          Aliquam eu ex vel diam laoreet sodales. Mauris est mauris, placerat a bibendum ut, malesuada a elit.
+      </p>
+  </div>
 <div>
 {{ range . }}
 <pre>
@@ -58,6 +84,9 @@
 </pre>
 {{ end }}
 </div>
+ <div style="text-align: center;">
+  <p><iconify-icon icon="bx:smile"></iconify-icon></p>
+ </div>
 </body>
 
 </html>
