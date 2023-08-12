@@ -25,7 +25,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with: 
-          name: profile-tiles-demo
           path: ./page
   deploy:
     needs: build
