@@ -36,7 +36,7 @@ func main() {
 	// 	panic(err)
 	// }
 
-	var profileTilesHTML = "./profileTile.html"
+	var profileTilesHTML = "./index.html"
 	writer, err := os.Create(profileTilesHTML)
 	if err != nil {
 		fmt.Println("Could not create file: ", err)
