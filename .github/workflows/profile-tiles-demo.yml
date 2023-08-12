@@ -19,14 +19,18 @@ jobs:
         run: |
           go build .
           ./profile-tiles
+          mkdir page
+          cp -R resources/ page/
+          cp index.html page/
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with: 
-          name: index.html
-          path: index.html
+          name: profile-tiles-demo
+          path: ./page
   deploy:
     needs: build
     permissions:
+      contents: read
       pages: write
       id-token: write
     runs-on: ubuntu-latest
