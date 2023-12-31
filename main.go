@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"html/template"
 	"os"
+	"profile-tiles/pkgs"
 	"strings"
 )
 
 func main() {
-	countries := LoadCountries()
-	profileTiles := ProfileTiles()
+	countries := pkgs.LoadCountries()
+	profileTiles := pkgs.ProfileTiles()
 	region := ""
 
 	for i, profile := range profileTiles {
@@ -19,7 +20,7 @@ func main() {
 		for _, line := range strings.Split(countries, "\n") {
 			if strings.Contains(line, country) {
 				region = strings.Split(line, "|")[2]
-				mutableProfile.addRegion(region)
+				mutableProfile.AddRegion(region)
 			}
 		}
 	}

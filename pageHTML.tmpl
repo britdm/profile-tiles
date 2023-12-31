@@ -1,45 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Profile Tiles Demo</title>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <style>
+    @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
     body {
       background-color:rgba(170, 199, 166, 0.823);
     }
-    pre {
-      display: inline-block;
-      white-space: pre-wrap; 
-      max-width: 375px; 
-      height: 425px; 
-      border-radius: 25px; 
-      border: 1px solid #C0C0C0;
-      background-color: white;
-      padding: 20px;
-      overflow: auto;
-      width: 33%;
-      font-family: system-ui;
+    .columns {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
-    table {
-      border: 0px solid black;
-      width: 100%;
-      font-size: 16px;
-      margin: 0px;
-    }
-    img {
-      width: 183px;
-      height: 165px;
-      padding: 0;
-      border-radius: 50%;
-    }
-    div {
-      display: flex;
-      justify-content:space-evenly;
+    .footer {
+        padding: 3rem 1.5rem 3rem;
+        background-color:rgba(170, 199, 166, 0.823);
     }
   </style>
 </head>
 <body>
-  <h1 style="text-align: center;">Profile Tiles Demo</h1><br/>
-  <div style="text-align: center;">
+  <h1 class="title is-1 columns is-centered">Profile Tiles Demo</h1>
+  <div class="message-body">
       <span>These "tiles" and page were generated using the tools and templates in the <a href="https://github.com/britdm/profile-tiles">repository</a>. To generate a static page with this template, modify the HTML in the <a href="https://github.com/britdm/profile-tiles/blob/main/pageHTML.tmpl">pageHTML.tmpl</a> file before running the tool.</span>
   </div>
   <div style="padding: 20px;">
@@ -60,33 +43,40 @@
           Aliquam eu ex vel diam laoreet sodales. Mauris est mauris, placerat a bibendum ut, malesuada a elit.
       </p>
   </div>
-<div>
+  <div class="columns">
 {{ range . }}
-<pre>
-<table>
-    <tr>
-        <td style="width: 50%"><img src={{ .Image }}></td>
-        <td style="width: 50%;text-align: center;">{{ .Name }}</td>
-    </tr>
-</table>
-<table>
-    <tr>
-        <td style="text-align: center;"><iconify-icon icon="mdi:location" style="color: gray;" width="15" height="15"></iconify-icon> {{ .Location }}</td>
-    </tr>
-</table>
-<table>
-    <tr>
-        <td style="width: 33%">{{ .Description }}</td>
-        <td style="width: 33%;text-align: center;">Linktree<br><br><a href={{ .Links }}><iconify-icon icon="simple-icons:linktree" style="color: limegreen;" width="50" height="50"></iconify-icon></a></td>
-        <td style="width: 33%;text-align: center;">Resume<br><br><a href={{ .Resume }} download><iconify-icon icon="mdi:file-download" style="color: black;" width="50" height="50"></iconify-icon></a></td>
-    </tr>
-</table>
-</pre>
-{{ end }}
+<div class="card column is-3">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src={{ .Image }} alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="media-content">
+                <p class="title is-4">{{ .Name }}</p>
+                <p class="subtitle is-6">
+                    <iconify-icon icon="mdi:location" style="color: gray;" width="15" height="15"></iconify-icon>{{ .Location }}
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            User description: {{ .Description }} 
+        </div>
+        <footer class="card-footer">
+            <p class="card-footer-item"><a href={{ .Links }}><iconify-icon icon="simple-icons:linktree" style="color: limegreen;" width="35" height="35"></iconify-icon></a></p>
+            <p class="card-footer-item"><a href={{ .Resume }} download><iconify-icon icon="mdi:file-download" style="color: black;" width="35" height="35"></iconify-icon></a></p>
+        </footer>
+    </div>
 </div>
- <div style="text-align: center;">
-  <p><iconify-icon icon="bx:smile"></iconify-icon></p>
- </div>
+{{ end }}
+  </div>
+  <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          This example site was built using <a href="https://bulma.io/">Bulma CSS</a> <iconify-icon icon="bx:smile"></iconify-icon>
+        </p>
+      </div>
+  </footer>
 </body>
-
 </html>

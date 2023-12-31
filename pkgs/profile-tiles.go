@@ -1,4 +1,4 @@
-package main
+package pkgs
 
 type Tile struct {
 	Description string
@@ -17,7 +17,7 @@ func ProfileTiles() []Tile {
 			Image:       "./resources/image.png",
 			Links:       "https://linktr.ee/",
 			Location:    "Austin, TX, US",
-			Name:        "FName\nL/SName",
+			Name:        "F_Name L/S_Name",
 			Resume:      "./resources/resume.pdf",
 		},
 		{
@@ -25,7 +25,7 @@ func ProfileTiles() []Tile {
 			Image:       "./resources/image.png",
 			Links:       "https://linktr.ee/",
 			Location:    "London, England, GB",
-			Name:        "FName\nL/SName",
+			Name:        "F_Name L/S_Name",
 			Resume:      "./resources/resume.pdf",
 		},
 		{
@@ -33,7 +33,7 @@ func ProfileTiles() []Tile {
 			Image:       "./resources/image.png",
 			Links:       "https://linktr.ee/",
 			Location:    "Canberra ACT 2601, AU",
-			Name:        "FName\nL/SName",
+			Name:        "F_Name L/S_Name",
 			Resume:      "./resources/resume.pdf",
 		},
 		// {
