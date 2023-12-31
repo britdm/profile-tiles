@@ -1,4 +1,4 @@
-package main
+package pkgs
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ func LoadCountries() string {
 	return string(body)
 }
 
-func (t *Tile) addRegion(region string) {
+func (t *Tile) AddRegion(region string) {
 	old_location := t.Location
 	t.Location = fmt.Sprintf("%s - %s", old_location, region)
 }
